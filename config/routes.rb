@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   get 'home_pages/home'
   get 'home_pages/tag'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get 'home_pages/about'
 
-  root 'application#hello'
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root 'home_pages#home'
 
 
 end
