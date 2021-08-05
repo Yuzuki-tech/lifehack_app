@@ -65,6 +65,7 @@ GEM
     ast (2.4.2)
     autoprefixer-rails (10.2.5.1)
       execjs (> 0)
+    bcrypt (3.1.16)
     bindex (0.8.1)
     bootsnap (1.7.5)
       msgpack (~> 1.0)
@@ -213,6 +214,8 @@ GEM
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
     semantic_range (3.0.0)
+    shoulda-matchers (5.0.0)
+      activesupport (>= 5.2.0)
     spring (2.1.1)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
@@ -255,6 +258,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  bcrypt
   bootsnap (>= 1.4.4)
   bootstrap-sass (= 3.4.1)
   byebug
@@ -271,6 +275,7 @@ DEPENDENCIES
   rubocop-rails
   sass-rails (>= 6)
   selenium-webdriver
+  shoulda-matchers
   spring
   turbolinks (~> 5)
   tzinfo-data
