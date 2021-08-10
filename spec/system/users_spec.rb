@@ -1,9 +1,8 @@
 require 'rails_helper'
 
-
 RSpec.describe 'users', type: :system do
   describe 'user create a new account' do
-    #有効な値が入力されたとき
+    # 有効な値が入力されたとき
     context 'enter an valid values' do
       before do
         visit signup_path
@@ -13,12 +12,12 @@ RSpec.describe 'users', type: :system do
         fill_in 'Confirmation', with: 'password'
         click_button 'Create my account'
       end
-      #フラッシュメッセージが出る
+      # フラッシュメッセージが出る
       it 'gets an flash message' do
         expect(page).to have_selector('.alert-success', text: 'Welcome to the Sample App!')
       end
     end
-    #無効な値が入力されたとき
+    # 無効な値が入力されたとき
     context 'enter an invalid values' do
       before do
         visit signup_path
@@ -29,13 +28,13 @@ RSpec.describe 'users', type: :system do
         click_button 'Create my account'
       end
       subject { page }
-      #エラーの検証
+      # エラーの検証
       it 'gets an errors' do
         is_expected.to have_selector('#error_explanation')
         is_expected.to have_selector('.alert-danger', text: 'The form contains 6 errors.')
         is_expected.to have_content("Password can't be blank", count: 2)
       end
-      #今いるページのURLの検証
+      # 今いるページのURLの検証
       it 'render to /users url' do
         is_expected.to have_current_path '/users'
       end

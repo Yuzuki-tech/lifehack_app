@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-
   it 'has a valid factory bot' do
     expect(build(:user)).to be_valid
   end
@@ -28,7 +27,6 @@ RSpec.describe User, type: :model do
                                       'foo@bar+baz.com',
                                       'foo@bar..com').for(:email)
     end
-
 
     describe 'validate unqueness of email' do
       let!(:user) { create(:user, email: 'original@example.com') }
@@ -60,9 +58,5 @@ RSpec.describe User, type: :model do
       end
       it { is_expected.to validate_length_of(:password).is_at_least(6) }
     end
-
-
-
-
   end
 end
