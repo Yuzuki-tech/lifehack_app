@@ -23,6 +23,11 @@ RSpec.describe 'UsersSignup', type: :request do
         subject { response }
         it { is_expected.to redirect_to user_path(User.last) } # showページにリダイレクトされる
         it { is_expected.to have_http_status 302 } # リダイレクト成功
+
+        it 'log in' do
+          expect(is_logged_in?).to be_truthy
+        end
+        
       end
     end
 
