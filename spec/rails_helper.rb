@@ -20,7 +20,13 @@ require 'rspec/rails'
 # directory. Alternatively, in the individual `*_spec.rb` files, manually
 # require only the support files necessary.
 #
-Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
+
+#元の行
+#Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
+
+#変更行
+Dir[Rails.root.join('spec', 'support', '**', '*.rb')].each { |f| require f }
+
 
 RSpec.configure do |config|
   config.include TestHelper #作成したヘルパーを追加
