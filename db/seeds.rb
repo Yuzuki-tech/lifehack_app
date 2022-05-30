@@ -8,18 +8,15 @@
 
 require 'faker'
 
-# メインのサンプルユーザーを1人作成する
-#User.create!(name:  "Example User",
-#             email: "example@railstutorial.org",
-#             password:              "foobar",
-#             password_confirmation: "foobar")
 
 # メインのサンプルユーザー１人追加する
   User.create!(name:  "aaaaaa",
                email: "user@example.com",
                password:              "aaaaaa",
                password_confirmation: "aaaaaa",
-               admin: true)
+               admin: true,
+               activated: true,
+               activated_at: Time.zone.now)
 
 
 # 追加のユーザーをまとめて生成する
@@ -31,5 +28,7 @@ require 'faker'
   User.create!(name:  name,
                email: email,
                password:              password,
-               password_confirmation: password)
+               password_confirmation: password,
+               activated: true,
+               activated_at: Time.zone.now)
 end
